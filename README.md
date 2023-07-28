@@ -51,3 +51,24 @@
        2.Add ts
        3.Add html
        4.Add css
+
+## 7.Food page
+
+    1.Add method to food service
+    2.Generate Food page component
+         1.Add route
+         2.Add td
+         3.Add html
+         4.Add css
+
+## 8.Cart Page
+
+    1.Create cartItem model
+    2.Create Cart model
+    3.Create cart service
+    4.Add to cart button in food page
+    5.Generate cart page
+        1.Add Routr
+        2.Add ts
+        3.Add html
+        4.Add css

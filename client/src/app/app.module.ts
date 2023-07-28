@@ -7,6 +7,8 @@ import { HeaderComponent } from './Components/Partials/header/header.component';
 import { HomeComponent } from './Components/Pages/home/home.component';
 import { SearchComponent } from './Components/Partials/search/search.component';
 import { TagsComponent } from './Components/Partials/tags/tags.component';
+import { FoodComponent } from './Components/Pages/food/food.component';
+import { CartPageComponent } from './Components/Pages/cart-page/cart-page.component';
 
 
 
@@ -18,7 +20,9 @@ import { TagsComponent } from './Components/Partials/tags/tags.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    TagsComponent
+    TagsComponent,
+    FoodComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
