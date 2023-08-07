@@ -17,6 +17,8 @@ export class HeaderComponent {
     })
     this.userService.userObservable.subscribe((newUser)=>{
       this.user=newUser
+      console.log("Header User",this.user);
+      
     })
   }
 

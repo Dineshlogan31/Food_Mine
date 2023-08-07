@@ -3,7 +3,9 @@ import { AbstractControl } from '@angular/forms';
 
 const VALIDATOR_ERROR_MSG:any={
   required:'Should not be empty',
-  email:'email is not valid'
+  email:'email is not valid',
+  minlength:'field is too short',
+  notMatch:'Password and confirmPassword is not match'
 
 }
 

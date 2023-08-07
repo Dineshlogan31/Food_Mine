@@ -1,8 +1,9 @@
 import {Router} from 'express'
 import { sampleFoods, sampleTags, sample_users } from '../data'
 import jwt from 'jsonwebtoken'
-import { UserModel } from '../models/user.model'
+import { User, UserModel } from '../models/user.model'
 import { FoodModel } from '../models/food.model'
+import bcrypt from 'bcrypt'
 
 const router=Router()
 
@@ -31,10 +32,34 @@ router.post('/login',async(req,res)=>{
     }
 })
 
+router.post('/register',async (req,res)=>{
+    const {email,password,name,address}=req.body
+    console.log(email,password,name,address);
+    
+    const user=await UserModel.findOne({email})
+    if(user)
+    {
+        res.status(400).send("Email is already exit,try with new one")
+        return;
+    }
+    else{
+        const encryptedPassword=await bcrypt.hash(password,10)
+        const newUser:User={
+            name,
+            email:email.toLowerCase(),
+            password:encryptedPassword,
+            address,
+            isAdmin:false,
+            token:''
+        }
+        const user=await UserModel.create(newUser)
+        res.send(generateWebToken(user))
+    }
+})
 const generateWebToken=(user:any)=>{
    const token=jwt.sign({
     id:user.id,email:user.email,isAdmin:user.isAdmin
-   },'MyNameIsDinesh',{expiresIn:'2d'})
+   },process.env.JWT_SECRET_KEY!,{expiresIn:'2d'})
 
    user.token=token
 

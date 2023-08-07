@@ -50,6 +50,11 @@ export class CartService {
 
   }
 
+   getCart():Cart
+  {
+    return this.cartSubject.value
+  }
+
   private setCartToLocalStorage()
   {
     this.cart.totalPrice=this.cart.items.reduce((prev,current)=> prev+current.price,0)

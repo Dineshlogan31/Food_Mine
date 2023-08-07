@@ -1,12 +1,12 @@
 import {Schema,model} from 'mongoose'
 
 export interface User{
-    id:string
     name:string
     email:string
     password:string
     address:string
     isAdmin:boolean
+    token:string
 }
 
 export const userSchema=new Schema({
@@ -14,7 +14,8 @@ export const userSchema=new Schema({
     email:{type:String,required:true},
     password:{type:String,required:true},
     address:{type:String,required:true},
-    isAdmin:{type:Boolean,required:true}
+    isAdmin:{type:Boolean,required:true,default:false},
+    token:{type:String}
 },{
     toJSON:{
         virtuals:true

@@ -9,6 +9,7 @@ import { sampleFoods, sampleTags, sample_users } from './data'
 
 import foodRouter from './routers/food.router'
 import userRouter from './routers/user.router'
+import orderRouter from './routers/order.router'
 dbConnect()
 const app=express()
 
@@ -20,6 +21,7 @@ app.use(cors({
 
 app.use('/api/food',foodRouter)
 app.use('/api/user',userRouter)
+app.use('/api/orders',orderRouter)
 
 app.listen(5000,()=>{
     console.log("listening on port 5000 ");
