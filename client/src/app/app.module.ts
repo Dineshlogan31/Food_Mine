@@ -27,6 +27,8 @@ import { CheckOutComponent } from './Components/Pages/check-out/check-out.compon
 import { OrderItemsListComponent } from './Components/Partials/order-items-list/order-items-list.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { PaymentPageComponent } from './Components/Pages/payment-page/payment-page.component';
+import { PaypalButtonComponent } from './Components/Partials/paypal-button/paypal-button.component';
+import { OrderTrackPageComponent } from './Components/Pages/order-track-page/order-track-page.component';
 
 
 
@@ -53,7 +55,9 @@ import { PaymentPageComponent } from './Components/Pages/payment-page/payment-pa
     LoadingComponent,
     CheckOutComponent,
     OrderItemsListComponent,
-    PaymentPageComponent
+    PaymentPageComponent,
+    PaypalButtonComponent,
+    OrderTrackPageComponent
   ],
   imports: [
     BrowserModule,

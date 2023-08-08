@@ -15,6 +15,8 @@ export class PaymentPageComponent implements OnInit {
   constructor (orderService:OrderService,router:Router) {
     orderService.getNewOrderForCurrentUser().subscribe({
       next:(order)=>{
+        console.log("order page",order);
+        
         this.order=order
       },
       error:()=>{
@@ -23,6 +25,7 @@ export class PaymentPageComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    console.log("payment tp",this.order.totalPrice);
     
   }
 

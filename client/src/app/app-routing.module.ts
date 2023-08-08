@@ -7,6 +7,7 @@ import { LoginPageComponent } from './Components/Pages/login-page/login-page.com
 import { RegisterPageComponent } from './Components/Pages/register-page/register-page.component';
 import { CheckOutComponent } from './Components/Pages/check-out/check-out.component';
 import { PaymentPageComponent } from './Components/Pages/payment-page/payment-page.component';
+import { OrderTrackPageComponent } from './Components/Pages/order-track-page/order-track-page.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'login',component:LoginPageComponent},
   {path:'register',component:RegisterPageComponent},
   {path:'checkout',component:CheckOutComponent},
-  {path:'payment',component:PaymentPageComponent}
+  {path:'payment',component:PaymentPageComponent},
+  {path:'track/:OrderId',component:OrderTrackPageComponent}
 ];
 
 @NgModule({
